@@ -28,7 +28,7 @@ Trust-aware cognitive orchestration system implementing PSMR protocol.
 ## Contact
 
 - GitHub: [@ivan-berlocher](https://github.com/ivan-berlocher)
-- LinkedIn: [Ivan Googl Berlocher](https://www.linkedin.com/in/ivangoogl/)
+- LinkedIn: [Ivan Berlocher](https://www.linkedin.com/in/ivanberlocher/)
 
 ---
 
