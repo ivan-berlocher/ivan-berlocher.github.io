@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmonia – Structured Human-AI Deliberation</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #222;
+      --muted: #666;
+      --accent: #0066cc;
+      --border: #e0e0e0;
+      --code-bg: #f4f4f4;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a1a;
+        --text: #e0e0e0;
+        --muted: #999;
+        --accent: #6db3f2;
+        --border: #333;
+        --code-bg: #2a2a2a;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    nav { margin-bottom: 3rem; }
+    nav a { color: var(--muted); font-size: 0.9rem; }
+    h1 { font-size: 1.75rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 2.5rem; }
+    section { margin-bottom: 2.5rem; }
+    h2 { 
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+    p { margin-bottom: 1rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: ui-monospace, 'SF Mono', monospace;
+      font-size: 0.9em;
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+    }
+    .highlight {
+      background: var(--code-bg);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .highlight p { margin: 0; }
+    .links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .links a {
+      background: var(--code-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">← Ivan Berlocher</a>
+  </nav>
+
+  <header>
+    <h1>Harmonia</h1>
+    <p class="subtitle">A protocol for structured human-AI deliberation</p>
+  </header>
+
+  <section>
+    <h2>What is it?</h2>
+    <p>
+      Harmonia is a formal protocol that structures dialogue between humans and AI systems 
+      through explicit reasoning cycles. Instead of free-form chat, every exchange follows 
+      a <strong>Perceive → Synthesize → Model → Reflect</strong> loop that makes AI reasoning 
+      transparent and auditable.
+    </p>
+    
+    <div class="highlight">
+      <p><strong>Core idea:</strong> AI should show its reasoning, not just its conclusions.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How is it different?</h2>
+    <p>Current AI assistants (ChatGPT, Claude, Gemini) operate as black boxes:</p>
+    <ul>
+      <li>You ask → they answer</li>
+      <li>No visibility into reasoning process</li>
+      <li>No structured way to challenge assumptions</li>
+      <li>Trust is implicit, not earned</li>
+    </ul>
+    
+    <p>Harmonia makes reasoning <em>explicit</em>:</p>
+    <ul>
+      <li>Every response declares its sources and assumptions</li>
+      <li>Uncertainty is quantified, not hidden</li>
+      <li>Users can inspect and challenge any step</li>
+      <li>Trust is built through transparency</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The PSMR Cycle</h2>
+    <p>Each deliberation turn follows four phases:</p>
+    <ul>
+      <li><strong>Perceive</strong> — What information is available? What context matters?</li>
+      <li><strong>Synthesize</strong> — How do these elements connect? What patterns emerge?</li>
+      <li><strong>Model</strong> — What hypotheses explain this? What predictions follow?</li>
+      <li><strong>Reflect</strong> — What confidence level? What assumptions? What's missing?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Where to start</h2>
+    <div class="links">
+      <a href="https://github.com/ivan-berlocher/harmonia-kernel">📦 harmonia-kernel</a>
+      <a href="https://github.com/ivan-berlocher/open-trust-infrastructure">📖 Open Trust Infrastructure</a>
+    </div>
+    <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem;">
+      The kernel contains the Python reference implementation.<br>
+      The book provides theoretical foundations (14 chapters, PDF available).
+    </p>
+  </section>
+
+  <section>
+    <h2>Canonical reference</h2>
+    <p>
+      Berlocher, I. (2025). <em>Open Trust Infrastructure: Language, Cognition, and Trust 
+      in Agentic Systems</em>. Zenodo.<br>
+      <a href="https://doi.org/10.5281/zenodo.XXXXXXX"><code>DOI: 10.5281/zenodo.XXXXXXX</code></a>
+    </p>
+  </section>
+
+  <footer>
+    <p>Questions? <a href="https://github.com/ivan-berlocher">GitHub</a> · <a href="https://linkedin.com/in/ivan-berlocher">LinkedIn</a></p>
+  </footer>
+
+</body>
+</html>
