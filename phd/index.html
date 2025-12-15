@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhD Research Proposal — Ivan Berlocher</title>
+  <meta name="description" content="LifeOS: A Constitutional Cognitive Operating System for Human–AI Co-Agency">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --text: #e8e8f0;
+      --accent: #6366f1;
+      --muted: #888;
+      --border: #2a2a3a;
+      --code-bg: #1a1a2e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 { 
+      font-size: 2.2rem; 
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    h2 { 
+      font-size: 1.5rem; 
+      margin: 2.5rem 0 1rem; 
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h3 { 
+      font-size: 1.2rem; 
+      margin: 1.5rem 0 0.5rem; 
+      color: var(--text);
+    }
+    p { margin: 1rem 0; }
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .author {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .abstract {
+      background: var(--code-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+      margin: 2rem 0;
+    }
+    .invariant {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+      border: 2px solid var(--accent);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+    }
+    .invariant p {
+      margin: 0.5rem 0;
+      font-style: italic;
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    th {
+      background: var(--code-bg);
+      color: var(--accent);
+    }
+    code {
+      background: var(--code-bg);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Menlo', monospace;
+      font-size: 0.9rem;
+    }
+    pre {
+      background: var(--code-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      font-family: 'Menlo', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    ul, ol {
+      margin: 1rem 0 1rem 2rem;
+    }
+    li { margin: 0.5rem 0; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .signature {
+      background: var(--code-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .signature p {
+      font-style: italic;
+      margin: 0.75rem 0;
+    }
+    .nav {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav a {
+      margin-right: 1.5rem;
+    }
+    .doi {
+      display: inline-block;
+      background: var(--code-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .diagram {
+      background: var(--code-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      text-align: center;
+      font-family: 'Menlo', monospace;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      white-space: pre;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/">← Home</a>
+  <a href="/harmonia/">Harmonia</a>
+  <a href="https://github.com/ivan-berlocher/open-trust-infrastructure">GitHub</a>
+</nav>
+
+<h1>PhD Research Proposal</h1>
+<p class="subtitle">LifeOS: A Constitutional Cognitive Operating System for Human–AI Co-Agency</p>
+<p class="author">Ivan Berlocher — December 2025</p>
+
+<p class="doi">
+  Related: <a href="https://doi.org/10.5281/zenodo.17940484">Open Trust Infrastructure (DOI: 10.5281/zenodo.17940484)</a>
+</p>
+
+<hr>
+
+<div class="abstract">
+<h2 style="margin-top:0">Abstract</h2>
+<p>Current AI systems conflate language generation, cognitive processing, and world-affecting action into undifferentiated pipelines. This architectural confusion creates fundamental safety, controllability, and trust issues that cannot be resolved through post-hoc alignment techniques.</p>
+<p>This thesis proposes <strong>LifeOS</strong>, a constitutional cognitive operating system that enforces structural separation between linguistic generation, semantic interpretation, and execution. Drawing on Montesquieu's separation of powers, Peircean semiotics, and speech act theory, we demonstrate that reliable human–AI co-agency requires <em>constitutional guarantees</em> rather than behavioral fine-tuning.</p>
+<p><strong>Scope clarification</strong>: This thesis does not propose a general theory of intelligence, but a design framework for human–AI cognitive systems with explicit constitutional guarantees.</p>
+<p>The central invariant is simple: <strong>meaning is not causation</strong> — no symbol can directly affect the world. This principle, implemented as an architectural constraint, ensures that the system remains trustworthy regardless of the correctness of any individual component.</p>
+</div>
+
+<h2>1. Problem Statement</h2>
+
+<h3>1.1 The Conflation Problem</h3>
+<p>Modern AI systems, particularly those built on Large Language Models, suffer from a fundamental architectural confusion:</p>
+
+<table>
+  <tr><th>What is conflated</th><th>Why it matters</th></tr>
+  <tr><td>Language generation ↔ Understanding</td><td>Models produce text without semantic grounding</td></tr>
+  <tr><td>Prediction ↔ Reasoning</td><td>Token prediction is mistaken for logical inference</td></tr>
+  <tr><td>Response ↔ Action</td><td>Outputs can trigger world-affecting consequences</td></tr>
+</table>
+
+<p>This conflation leads to:</p>
+<ul>
+  <li><strong>Hallucination</strong> — generating plausible but false content</li>
+  <li><strong>Uncontrolled action</strong> — executing commands without verification</li>
+  <li><strong>Opacity</strong> — inability to audit decision pathways</li>
+  <li><strong>Trust erosion</strong> — users cannot rely on system behavior</li>
+</ul>
+
+<h3>1.2 The Alignment Paradox</h3>
+<p>Current "AI safety" approaches attempt to solve these problems through fine-tuning on human preferences (RLHF), Constitutional AI prompting, and output filtering. These approaches share a fatal flaw: <strong>they depend on the system being correct</strong>.</p>
+
+<h4>Why LifeOS is not Constitutional AI</h4>
+<ol>
+  <li><strong>Constitutional AI</strong> (Anthropic) embeds normative rules <em>inside</em> the model.</li>
+  <li><strong>LifeOS</strong> enforces constitutional constraints <em>outside</em> the model.</li>
+  <li>As a result, LifeOS remains safe even when the model is incorrect, whereas Constitutional AI fundamentally depends on model compliance.</li>
+</ol>
+
+<p>A system that requires correctness to be safe will eventually fail. The question is not <em>if</em> but <em>when</em>.</p>
+
+<h3>1.3 Research Question</h3>
+<blockquote>How can we design cognitive AI systems that remain <strong>structurally trustworthy</strong> regardless of the correctness of their linguistic outputs?</blockquote>
+
+<h2>2. Theoretical Framework</h2>
+
+<h3>2.1 Montesquieu's Separation of Powers</h3>
+<blockquote>
+  "Pour qu'on ne puisse abuser du pouvoir, il faut que, par la disposition des choses, le pouvoir arrête le pouvoir."<br>
+  — Montesquieu, <em>L'Esprit des lois</em> (1748)
+</blockquote>
+
+<p>We transpose this principle to cognitive architecture:</p>
+
+<table>
+  <tr><th>Political</th><th>Cognitive (LifeOS)</th></tr>
+  <tr><td>Legislative</td><td>Language generation (LLM)</td></tr>
+  <tr><td>Executive</td><td>ExecutorOS (action)</td></tr>
+  <tr><td>Judicial</td><td>Validation, constraints, traceability</td></tr>
+  <tr><td>Law</td><td>Invariant</td></tr>
+  <tr><td>Constitution</td><td>Architecture</td></tr>
+</table>
+
+<p><strong>Key insight</strong>: The power to <em>say</em> is never the power to <em>do</em>.</p>
+
+<h3>2.2 Peircean Semiotics</h3>
+<p>The semiotic triangle provides the theoretical foundation:</p>
+<ul>
+  <li><strong>Signifiant</strong>: The linguistic form (word, token, symbol)</li>
+  <li><strong>Signifié</strong>: The mental concept evoked</li>
+  <li><strong>Référent</strong>: The actual entity in the world</li>
+</ul>
+<p><strong>Central principle</strong>: The relationship between signifiant and référent is <em>arbitrary and mediated</em>. A symbol cannot directly cause world-state changes.</p>
+
+<h3>2.3 Speech Act Theory</h3>
+<p>Following Austin and Searle, we distinguish:</p>
+<ul>
+  <li><strong>Locutionary acts</strong>: Saying something</li>
+  <li><strong>Illocutionary acts</strong>: The intention in saying</li>
+  <li><strong>Perlocutionary acts</strong>: Effects on the world</li>
+</ul>
+<p>LifeOS architecturally separates these layers, ensuring that locutionary production (LLM output) never directly produces perlocutionary effects (world changes).</p>
+
+<h2>3. Proposed Architecture: LifeOS</h2>
+
+<h3>3.1 Overview</h3>
+<p>LifeOS is a <strong>constitutional cognitive operating system</strong> comprising modular, separable components:</p>
+
+<div class="diagram">
+┌─────────────────────────────────────────────────────────────┐
+│                        WORLD                                │
+└─────────────────────────────────────────────────────────────┘
+                              ▲
+                              │ Verified actions only
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│                      EXECUTOR OS                            │
+│              (sole point of world contact)                  │
+└─────────────────────────────────────────────────────────────┘
+                              ▲
+                              │ Validated intentions
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│                       HARMONIA                              │
+│  Cognition → Semiotics → Semantics → Pragmatics            │
+│                    + Memory + Context                       │
+└─────────────────────────────────────────────────────────────┘
+                              ▲
+                              │ Input
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│                        HUMAN                                │
+│                   (sovereign, always)                       │
+└─────────────────────────────────────────────────────────────┘
+</div>
+
+<h3>3.2 Core Modules</h3>
+<table>
+  <tr><th>Module</th><th>Function</th><th>Key Property</th></tr>
+  <tr><td><strong>CognitionOS</strong></td><td>Pattern recognition, language generation</td><td>No world access</td></tr>
+  <tr><td><strong>MemoryOS</strong></td><td>Episodic, semantic, procedural memory</td><td>Persistent identity</td></tr>
+  <tr><td><strong>LearningOS</strong></td><td>Skill acquisition, adaptation</td><td>Supervised updates</td></tr>
+  <tr><td><strong>BehaviorOS</strong></td><td>Action planning and sequencing</td><td>Intent validation</td></tr>
+  <tr><td><strong>EmotionOS</strong></td><td>Salience, orientation, attention</td><td>Non-decisive signals</td></tr>
+  <tr><td><strong>Harmonia</strong></td><td>Constitutional layer, semiotic firewall</td><td>Invariant enforcement</td></tr>
+  <tr><td><strong>ExecutorOS</strong></td><td>World-affecting action execution</td><td>Sole action point</td></tr>
+</table>
+
+<h3>3.3 Harmonia: The Constitutional Layer</h3>
+<p>Harmonia implements the core invariant through a layered processing pipeline:</p>
+<ol>
+  <li><strong>Cognition</strong> — LLM generates representations</li>
+  <li><strong>Semiotics</strong> — Distinguish signifiant/signifié/référent</li>
+  <li><strong>Semantics</strong> — Construct coherent meaning</li>
+  <li><strong>Pragmatics</strong> — Form validated intentions</li>
+  <li><strong>Execution</strong> — (External) Act on the world</li>
+</ol>
+<p><strong>Critical constraint</strong>: No layer can bypass another. The LLM (layer 1) can never directly invoke ExecutorOS (layer 5).</p>
+
+<h3>3.4 The Invariant</h3>
+<div class="invariant">
+  <p><strong>Meaning is not causation.</strong></p>
+  <p><strong>No symbol acts directly on the world.</strong></p>
+  <p><strong>The power to say is never the power to do.</strong></p>
+</div>
+
+<p>This invariant is:</p>
+<ul>
+  <li><strong>Architectural</strong> — enforced by system structure</li>
+  <li><strong>Verifiable</strong> — auditable in code</li>
+  <li><strong>Universal</strong> — applies to all components</li>
+</ul>
+
+<h2>4. Contributions</h2>
+
+<h3>Contribution 1: Conceptual — Cognitive OS</h3>
+<p>Redefining AI systems as <strong>cognitive operating systems</strong> rather than applications or agents:</p>
+<ul>
+  <li>Cognition ≠ Application</li>
+  <li>OS ≠ Agent</li>
+  <li>Intelligence as closed-loop: perception → decision → action → learning</li>
+</ul>
+
+<h3>Contribution 2: Constitutional — Montesquian Architecture</h3>
+<p>Applying political philosophy to AI architecture:</p>
+<ul>
+  <li>Separation of language, sense, and action</li>
+  <li>Invariant "meaning is not causation"</li>
+  <li>Explicit, revocable consent</li>
+</ul>
+
+<h3>Contribution 3: Architectural — Modular Implementation</h3>
+<p>A complete, executable architecture:</p>
+<ul>
+  <li>Seven core modules (CognitionOS, MemoryOS, etc.)</li>
+  <li>Clear interfaces and boundaries</li>
+  <li>Production-grade implementation</li>
+</ul>
+
+<h3>Contribution 4: HCI — Co-Agency Model</h3>
+<p>The "alter ego" paradigm:</p>
+<blockquote>The term "alter ego" is used strictly as a Human–Computer Interaction metaphor, not as a psychological or cognitive duplication model.</blockquote>
+<ul>
+  <li>LifeOS as <strong>revocable delegate</strong>, not autonomous agent</li>
+  <li>Human sovereignty preserved architecturally</li>
+  <li>"I delegate execution, never sovereignty"</li>
+</ul>
+
+<h3>Contribution 5: Methodological — Philosophy to Code</h3>
+<p>Demonstrating the path from principle to implementation:</p>
+<ul>
+  <li>Invariant → Architecture → Feature gate</li>
+  <li>Constitution → Checklist → Automatic rejection</li>
+  <li>Traceable from philosophy to PR review</li>
+</ul>
+
+<h2>5. Research Methodology</h2>
+
+<h3>5.1 Design Science Research</h3>
+<p>Following Hevner et al. (2004), this thesis employs design science methodology:</p>
+<ol>
+  <li><strong>Problem identification</strong> — Conflation in AI systems</li>
+  <li><strong>Objective definition</strong> — Constitutional trustworthiness</li>
+  <li><strong>Design and development</strong> — LifeOS architecture</li>
+  <li><strong>Demonstration</strong> — Working implementation</li>
+  <li><strong>Evaluation</strong> — Formal and empirical analysis</li>
+  <li><strong>Communication</strong> — This thesis</li>
+</ol>
+
+<h3>5.2 Formal Methods</h3>
+<p>Key properties will be verified using:</p>
+<ul>
+  <li><strong>Invariant analysis</strong> — Proving that the separation property holds</li>
+  <li><strong>Information flow analysis</strong> — Demonstrating that LLM outputs cannot directly affect ExecutorOS</li>
+  <li><strong>Trace analysis</strong> — Auditing decision pathways</li>
+</ul>
+
+<h3>5.3 Empirical Evaluation</h3>
+<ul>
+  <li><strong>Case studies</strong> — Educational applications (EduOS)</li>
+  <li><strong>User studies</strong> — Trust perception, control experience</li>
+  <li><strong>Comparative analysis</strong> — LifeOS vs. conventional agent architectures</li>
+</ul>
+
+<h2>6. Current Status</h2>
+
+<h3>6.1 Completed Work</h3>
+<table>
+  <tr><th>Component</th><th>Status</th></tr>
+  <tr><td>Theoretical framework</td><td>Complete</td></tr>
+  <tr><td>Core architecture design</td><td>Complete</td></tr>
+  <tr><td>Harmonia implementation</td><td>Production</td></tr>
+  <tr><td>ExecutorOS</td><td>Production</td></tr>
+  <tr><td>MemoryOS</td><td>Production</td></tr>
+  <tr><td>EduOS (educational suite)</td><td>Production</td></tr>
+  <tr><td>Documentation (Constitution, Invariant)</td><td>Complete</td></tr>
+</table>
+
+<h3>6.2 Remaining Work</h3>
+<table>
+  <tr><th>Task</th><th>Estimated Duration</th></tr>
+  <tr><td>Scoped formal verification</td><td>6 months</td></tr>
+  <tr><td>Comparative evaluation</td><td>4 months</td></tr>
+  <tr><td>User studies</td><td>4 months</td></tr>
+  <tr><td>Thesis writing</td><td>6 months</td></tr>
+</table>
+
+<h2>7. Expected Outcomes</h2>
+
+<h3>7.1 Academic Contributions</h3>
+<ol>
+  <li>A new paradigm for AI system design: <strong>constitutional cognitive systems</strong></li>
+  <li>Formal framework for separation of linguistic and causal powers</li>
+  <li>Practical architecture for trustworthy human–AI co-agency</li>
+  <li>Methodology for translating philosophical principles into verifiable code</li>
+</ol>
+
+<h3>7.2 Practical Impact</h3>
+<ul>
+  <li><strong>AI Safety by Design</strong> — Not alignment, but architectural guarantee</li>
+  <li><strong>Auditable AI</strong> — Traceable decision pathways</li>
+  <li><strong>Human-Centric AI</strong> — Sovereignty preserved, not delegated</li>
+</ul>
+
+<h2>8. References</h2>
+
+<h3>Foundational</h3>
+<ul>
+  <li>Austin, J.L. (1962). <em>How to Do Things with Words</em></li>
+  <li>Montesquieu (1748). <em>De l'Esprit des lois</em></li>
+  <li>Peirce, C.S. (1931-1958). <em>Collected Papers</em></li>
+  <li>Searle, J.R. (1969). <em>Speech Acts</em></li>
+</ul>
+
+<h3>AI Safety & Alignment</h3>
+<ul>
+  <li>Amodei, D. et al. (2016). <em>Concrete Problems in AI Safety</em></li>
+  <li>Russell, S. (2019). <em>Human Compatible: AI and the Problem of Control</em></li>
+  <li>Bai, Y. et al. (2022). <em>Constitutional AI: Harmlessness from AI Feedback</em> (Anthropic)</li>
+</ul>
+
+<h3>Methodology</h3>
+<ul>
+  <li>Hevner, A.R. et al. (2004). Design Science in Information Systems Research</li>
+</ul>
+
+<hr>
+
+<div class="signature">
+  <h2 style="margin-top:0">Signature Statements</h2>
+  <p>"Words can contradict each other. The world cannot."</p>
+  <p>"I build systems that protect humans from their own ideas."</p>
+  <p>"Trust does not rest on intentions, but on structure."</p>
+  <p>"I delegate execution, never sovereignty."</p>
+</div>
+
+<hr>
+
+<p><strong>Final thesis statement</strong>:</p>
+<blockquote>This work argues that trustworthy human–AI systems should not rely on correct behavior, but on architectures that make harmful behavior structurally impossible.</blockquote>
+
+<hr>
+
+<p style="color: var(--muted); text-align: center;">
+  Document version: 1.1 — December 2025<br>
+  <a href="https://ivan-berlocher.github.io">ivan-berlocher.github.io</a>
+</p>
+
+</body>
+</html>
