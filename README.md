@@ -1,6 +1,6 @@
 # ivan-berlocher.github.io
 
-Personal academic pages for Ivan Googl Berlocher.
+Personal academic pages for Ivan Berlocher.
 
 ## Pages
 
